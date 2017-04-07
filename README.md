@@ -14,7 +14,9 @@ To get started, you need:
 - A [Keen IO account](https://keen.io/signup?source=glitch)
 - A Keen IO project with data streaming to it from the [Auto-Collector](https://keen.io/docs/streams/web-auto-collection/?source=glitch)
 
-Once you have these two things, replace the example `projectId` and `readKey` in the public/settings.js file with those for your project. 
+Once you have these two things, you can remix the code in [Glitch](https://glitch.com/edit/#!/remix/auto-collector-dashboard) or locally by pulling the [Glitch branch](https://github.com/keen/auto-collector-dashboard/tree/glitch) of this repo.
+
+Next, you need to replace the example `projectId` and `readKey` in the public/settings.js file with those for your project. 
 
 You can also choose what the relative timeframe your dashboard queries. We have set it at `this_4_weeks` in settings.js to start. 
 
@@ -40,17 +42,13 @@ You can add your own custom data visualizations and analysis for your Keen IO ev
 
 If you want to track custom events beyond pageviews, clicks, and form submissions, you can easily access our core Javascript tracking library (which this SDK uses under the hood). See more [here](https://keen.io/docs/streams/web-auto-collection/?source=glitch).
 
-The data collected by the Auto-Collector nicely compliments other user behavior data.
-
-For example: You could have a graph of `signup` or `login` events that are custom to your application. Other example actions you could track with Keen IO are: `swipes`, `upgrades`, `purchases`, `powerups`, `errors`, `shares`. 
+The data collected by the Auto-Collector nicely compliments other user behavior data. For example: You could have a graph of `signup` or `login` events that are custom to your application. Other example actions you could track with Keen IO are: `swipes`, `upgrades`, `purchases`, `powerups`, `errors`, `shares`. 
 
 If you want to think more about event data, check out this [blog post](https://blog.keen.io/analytics-for-hackers-how-to-think-about-event-data-cabeefe1f3d9?source=glitch).
 
 ## Contributions Welcome
 
-This is an open source project, and we love involvement from the community! If you are interested in getting involved, please see the CONTRIBUTING.md file.
-
-You can find the Github repo for this project located at [https://github.com/keen/auto-collector-dashboard](https://github.com/keen/auto-collector-dashboard).
+This is an open source project, and we love involvement from the community! If you are interested in getting involved, please see the [CONTRIBUTING.md](CONTRIBUTING) file.
 
 ## Need Help?
 
