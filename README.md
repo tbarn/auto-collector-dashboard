@@ -14,7 +14,7 @@ To get started, you need:
 - A [Keen IO account](https://keen.io/signup?source=glitch)
 - A Keen IO project with data streaming to it from the [Auto-Collector](https://keen.io/docs/streams/web-auto-collection/?source=glitch)
 
-Once you have these two things, replace the example `projectId` and `readKey` in the settings.js file with those for your project. 
+Once you have these two things, replace the example `projectId` and `readKey` in the public/settings.js file with those for your project. 
 
 You can also choose what the relative timeframe your dashboard queries. We have set it at `this_4_weeks` in settings.js to start. 
 
