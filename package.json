@@ -1,0 +1,25 @@
+{
+  "name": "auto-collector-dashboard",
+  "version": "0.0.1",
+  "description": "Pre-made dashboard for a Keen IO project using the Auto-Collector",
+  "contributors" : [{ "name": "Taylor Barnett", "email": "taylor@keen.io" }],
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+  },
+  "engines": {
+    "node": "6.9.x"
+  },
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/keen/auto-collector-dashboard"
+  },
+  "license": "MIT",
+  "keywords": [
+    "keenio",
+    "node",
+    "analytics"
+  ]
+}
