@@ -1,6 +1,6 @@
 # Keen IO Auto-Collector Dashboard 📉📊📈
 
-A pre-made dashboard for a Keen IO projects using the [Auto-Collector](https://keen.io/docs/streams/web-auto-collection/?source=glitch).
+A pre-made dashboard for Keen IO projects using the [Auto-Collector](https://keen.io/docs/streams/web-auto-collection/?source=glitch).
 
 This dashboard is built using the existing event data models, so you don't have to!
 
