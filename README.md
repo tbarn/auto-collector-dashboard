@@ -26,7 +26,7 @@ If you are **running the project locally**, you need to set what locahost:`PORT`
 
 `PORT=3000`
 
-Give you already have [node installed](https://nodejs.org/en/download/) on your machine, you will then run `node server.js` in your terminal in the same folder as server.js. 
+Given you already have [node installed](https://nodejs.org/en/download/) on your machine, you will then run `node server.js` in your terminal in the same folder as server.js. 
 
 You can then navigate to localhost:3000 (or whatever `PORT` you set) in your browser to see the dashboard. 
 
@@ -38,11 +38,13 @@ The cool thing about the Auto-Collector is that it is just a start.
 
 You can add your own custom data visualizations and analysis for your Keen IO event streams alongside the event data models from the Auto-Collector. 
 
+If you want to track custom events beyond pageviews, clicks, and form submissions, you can easily access our core Javascript tracking library (which this SDK uses under the hood). See more [here](https://keen.io/docs/streams/web-auto-collection/?source=glitch).
+
 The data collected by the Auto-Collector nicely compliments other user behavior data.
 
 For example: You could have a graph of `signup` or `login` events that are custom to your application. Other example actions you could track with Keen IO are: `swipes`, `upgrades`, `purchases`, `powerups`, `errors`, `shares`. 
 
-If you want to think more about event data, check out this [blog post](https://blog.keen.io/analytics-for-hackers-how-to-think-about-event-data-cabeefe1f3d9).
+If you want to think more about event data, check out this [blog post](https://blog.keen.io/analytics-for-hackers-how-to-think-about-event-data-cabeefe1f3d9?source=glitch).
 
 ## Contributions Welcome
 
