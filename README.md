@@ -22,17 +22,11 @@ You can also choose what the relative timeframe your dashboard queries. We have 
 
 ## Running the Application
 
-If you are **running the project within Glitch**, all you have to do now is click the "Show Live" button at the top. 
+If you are **running the project within Glitch**, click the "Show Live" button.
 
-If you are **running the project locally**, you need to set what locahost:`PORT` you would like to view the dashboard on. You can set the environment variable locally by creating an *.env file located in the same folder as server.js. Here's an example *.env file:
+If you are **running the project locally** and have the files downloaded or git cloned, open the index.html file in a browser.
 
-`PORT=3000`
-
-Given you already have [node installed](https://nodejs.org/en/download/) on your machine, you will then run `node server.js` in your terminal in the same folder as server.js. 
-
-You can then navigate to localhost:3000 (or whatever `PORT` you set) in your browser to see the dashboard. 
-
-Your dashboard should then render! 🎉📊✨
+Your dashboard should now render in your browser! 🎉📊✨
 
 ## Going Forward 
 
