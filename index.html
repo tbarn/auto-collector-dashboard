@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Keen IO Auto-Collector Dashboard</title>
+    <link rel="shortcut icon" href="https://keen.io/assets/images/favicon.ico"/>
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/keen-dashboards.css" />
     <link rel="stylesheet" href="./assets/demo-styles.css" />
-
-    <link rel="shortcut icon" href="https://keen.io/assets/images/favicon.ico"/>       
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.min.css">
+    <!-- THEMES -->
+    <link rel="stylesheet" href="./themes/dashboard.css" />
+    <!-- JS -->
     <script src="https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js"></script>
     <script src="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.min.js"></script>
     <script src="https://d26b395fwzu5fz.cloudfront.net/keen-analysis-1.2.2.js"></script>
-
+    <!-- Keen IO Setttings -->
     <script src="./settings.js"></script>
-
-    <!-- THEMES -->
-    <link rel="stylesheet" href="./themes/dashboard.css" />
   </head>
   <body class="demo-theme-dashboard" onload="settings()">
-    
+
     <div class="container">
       <h1>
-        Keen IO Auto-Collector Dashboard 
+        Keen IO Auto-Collector Dashboard
         <a href="https://glitch.com/edit/#!/remix/auto-collector-dashboard"><img src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg" alt="Remix on Glitch" /></a>
       </h1>
-      
+
     <nav>
         <ul class="nav nav-tabs">
           <li role="presentation" class="active"><a href="./index.html">Pageviews</a></li>
           <li role="presentation"><a href="./clicks.html">Clicks</a></li>
           <li role="presentation"><a href="./forms.html">Forms</a></li>
           <li role="presentation"><a href="https://github.com/keen/auto-collector-dashboard">Source Code on Github</a></li>
-        </ul> 
+        </ul>
       </nav>
-      
-      <h3 id="timeframe"></h3>      
-      
+
+      <h3 id="timeframe"></h3>
+
       <div class="keen-ui-row">
         <div class="keen-ui-col-8">
           <div class="pageviews-interval"></div>
@@ -62,8 +61,8 @@
         </div>
         <div class="keen-ui-col-6">
           <div class="popular-pages-visited"></div>
-        </div>       
-      </div>      
+        </div>
+      </div>
 
       <div class="keen-ui-row">
         <div class="keen-ui-col-6">
@@ -71,8 +70,8 @@
         </div>
         <div class="keen-ui-col-6">
           <div class="pageviews-by-device"></div>
-        </div>                       
-      </div> 
+        </div>
+      </div>
 
       <div>
         <div class="keen-ui-col-6">
@@ -81,15 +80,15 @@
         <div class="keen-ui-col-6">
           <div class="pageviews-by-city"></div>
         </div>
-      </div>      
-      
+      </div>
+
     </div>
-    
+
     <script>
     window.renderCharts = function(client, timeframe) {
 
       document.getElementById("timeframe").innerHTML="timeframe: " + timeframe.replace(/_/g, ' ');
-  
+
       var pageviewsInterval = new Dataviz()
         .height(300)
         .el('.pageviews-interval')
@@ -114,7 +113,7 @@
           // Handle the error
           pageviewsInterval
             .message(err.message);
-        });      
+        });
 
       var pageviews = new Dataviz()
         .height(300)
@@ -126,7 +125,7 @@
       client
         .query('count', {
           event_collection: 'pageviews',
-          timeframe: timeframe,         
+          timeframe: timeframe,
           timezone: 'UTC'
         })
         .then(function(res){
@@ -139,7 +138,7 @@
           // Handle the error
           pageviews
             .message(err.message);
-        });                
+        });
 
       var pageviewsByReferrer = new Dataviz()
         .el('.pageviews-by-referrer')
@@ -159,7 +158,7 @@
               "property_value": null
           }],
           group_by: [
-          "referrer.info.domain"],          
+          "referrer.info.domain"],
           timezone: 'UTC'
         })
         .then(function(res){
@@ -199,7 +198,7 @@
           // Handle the error
           uniquePageviews
             .message(err.message);
-        });            
+        });
 
       var pageviewsByDay = new Dataviz()
         .height(300)
@@ -235,14 +234,14 @@
           // Handle the error
           pageviewsByDay
             .message(err.message);
-        });      
+        });
 
       var pageviewsByBrowser = new Dataviz()
         .height(300)
         .el('.pageviews-by-browser')
         .type('pie')
         .title('Pageviews by Browser')
-        .prepare();        
+        .prepare();
 
       client
         .query('count', {
@@ -269,8 +268,8 @@
         .el('.pageviews-by-device')
         .type('pie')
         .title('Pageviews by Device Family')
-        .prepare();        
-      
+        .prepare();
+
       client
         .query('count', {
           event_collection: "pageviews",
@@ -289,8 +288,8 @@
           // Handle the error
           pageviewsByDevice
             .message(err.message);
-        });      
-            
+        });
+
       var popularPages = new Dataviz()
         .height(300)
         .el('.popular-pages-visited')
@@ -298,13 +297,13 @@
         .chartOptions({
           axis: {
             y: {
-              padding: {bottom:0} 
+              padding: {bottom:0}
             }
           }
         })
         .title('Popular Pages Visited by Title')
-        .prepare();        
-      
+        .prepare();
+
       client
         .query('count', {
           event_collection: "pageviews",
@@ -324,8 +323,8 @@
           // Handle the error
           popularPages
             .message(err.message);
-        });       
-      
+        });
+
       var pageviewsByCountry = new Dataviz()
         .el('.pageviews-by-country')
         .height(300)
@@ -352,8 +351,8 @@
           // Handle the error
           pageviewsByCountry
             .message(err.message);
-        });      
-      
+        });
+
        var pageviewsByCity = new Dataviz()
         .el('.pageviews-by-city')
         .height(300)
@@ -373,7 +372,7 @@
           // Handle the result
           pageviewsByCity
             .data(res)
-            .sortGroups('desc')        
+            .sortGroups('desc')
             .render();
         })
         .catch(function(err){
@@ -381,7 +380,7 @@
           pageviewsByCity
             .message(err.message);
         });
-      
+
       function rand(a, b){
         return Math.floor((Math.random() * b) + a);
       }
