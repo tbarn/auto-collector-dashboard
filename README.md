@@ -14,7 +14,9 @@ To get started, you need:
 - A [Keen IO account](https://keen.io/signup?source=glitch)
 - A Keen IO project with data streaming to it from the [Auto-Collector](https://keen.io/docs/streams/web-auto-collection/?source=glitch)
 
-Once you have these two things, you can remix the code in [Glitch](https://glitch.com/edit/#!/remix/auto-collector-dashboard) or locally by pulling this repo.
+If you don’t already have Auto-Collector installed, drop in this [snippet](http://keen.io/project/recent/redirect?path=settings/install/autocollector) into your website’s <head> code and start seeing web events flow in within seconds.
+
+Once you have these two things, you can remix the code in [Glitch](https://glitch.com/edit/#!/remix/auto-collector-dashboard) or locally by cloning this repo.
 
 Next, you need to replace the example `projectId` and `readKey` in the settings.js file with those for your project. 
 
@@ -32,11 +34,11 @@ Your dashboard should now render in your browser! 🎉📊✨
 
 The cool thing about the Auto-Collector is that it is just a start.
 
-You can add your own custom data visualizations and analysis for your Keen IO event streams alongside the event data models from the Auto-Collector. 
+When using the Auto-Collector Dashboard, you don’t have to think about what your data model is. It’s a great starting point to hit the ground running quickly. You can always customize and enrich your data and your data views later alongside the event data models from the Auto-Collector.
 
 If you want to track custom events beyond pageviews, clicks, and form submissions, you can easily access our core Javascript tracking library (which this SDK uses under the hood). See more [here](https://keen.io/docs/streams/web-auto-collection/?source=glitch).
 
-The data collected by the Auto-Collector nicely compliments other user behavior data. For example: You could have a graph of `signup` or `login` events that are custom to your application. Other example actions you could track with Keen IO are: `swipes`, `upgrades`, `purchases`, `powerups`, `errors`, `shares`. 
+For example: You could have a graph of signup or login events that are custom to your application. Other example actions you could track with Keen IO are: purchases, powerups, upgrades, errors, swipes, favorites, impressions, etc.
 
 If you want to think more about event data, check out this [blog post](https://blog.keen.io/analytics-for-hackers-how-to-think-about-event-data-cabeefe1f3d9?source=glitch).
 
